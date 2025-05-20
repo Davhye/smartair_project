@@ -12,16 +12,19 @@ import tensorflow as tf
 from tensorflow.python.keras.models import load_model
 import requests
 from collections import defaultdict
+from dotenv import load_dotenv
 import os
 BASE_URL = "https://smartair.site"
 
 app = FastAPI()
+load_dotenv(dotenv_path="key.env")
 
-# S3 접근 정보 (하드코딩 주의)
-access_key_id = os.getenv("AWS_ACCESS_KEY_ID")
-secret_access_key = os.getenv("AWS_SECRET_ACCESS_KEY")
+# S3 접근 정보
+access_key_id = os.getenv("ACCESS_KEY_ID")
+secret_access_key = os.getenv("SECRET_ACCESS_KEY")
 region = 'ap-northeast-2'
-bucket_name = 'smartair-bucket'
+bucket_name = os.getenv("BUCKET_NAME")
+password = os.getenv("PASSWORD")
 
 # 모델 로드
 pm10_model = keras.models.load_model("pm10_model.h5", compile=False)
@@ -46,7 +49,7 @@ login_endpoint = "/login"
 # 로그인 데이터
 login_data = {
     "email": "admin@example.com",
-    "password": "123"
+    "password": password
 }
 
 #토근 발급 부분
