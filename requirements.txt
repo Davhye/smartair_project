@@ -1,7 +1,8 @@
 fastapi
-uvicorn[standard]
+uvicorn
 boto3
-tensorflow
 numpy
+tensorflow
 requests
-os
+python-dotenv
+pytz
