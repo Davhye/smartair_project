@@ -9,10 +9,9 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 코드와 모델 파일 복사
-COPY avgpredict.py .
+COPY avgoutlier.py .
 COPY pm10_model.h5 .
 COPY co2_model.h5 .
 COPY tvoc_model.h5 .
 
-# FastAPI 기본 실행 (필요시 수정)
-CMD ["uvicorn", "avgpredict:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "avgoutlier.py"]
