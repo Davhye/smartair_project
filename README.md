@@ -14,7 +14,7 @@
 - 정규화 처리, 시계열 구성 후 1시간 단위 예측
 - 모델 성능 검증: MAE, RMSE, R² 등
 
-[📎 Colab 파일 보기]([https://colab.research.google.com/drive/your_colab_link_here](https://colab.research.google.com/drive/1Xn7auVeNUPyOFPFwBX6cxtmE7nmH6w00?usp=sharing))
+[📎 Colab 파일 보기](https://colab.research.google.com/drive/1Xn7auVeNUPyOFPFwBX6cxtmE7nmH6w00?usp=sharing))
 
 ---
 
