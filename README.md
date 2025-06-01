@@ -28,16 +28,18 @@
 ---
 
 ## ⚙️ 실행 구조
-📁 app/
-├── avgpredict/avgoutlier.py # FastAPI 서버 메인
-├── models/
-│ └── pm10_model.h5
-│ └── co2_model.h5
-│ └── tvoc_model.h5
-Dockerfile
-requirements.txt
-.env
-README.md
+📁 smartair/
+├── app/
+│   ├── main.py              # FastAPI 서버
+│   ├── models/
+│   │   ├── pm10_model.h5    # PM10 예측 모델
+│   │   ├── co2_model.h5     # CO2 예측 모델
+│   │   └── tvoc_model.h5    # TVOC 예측 모델
+├── Dockerfile               # Docker 컨테이너 정의 파일
+├── requirements.txt         # 필요한 패키지 목록
+├── .env                     # AWS 키 등 환경변수 (유출 문제로 업로드X)
+└── README.md                # 프로젝트 설명 파일
+ 
 
 ---
 
@@ -45,7 +47,13 @@ README.md
 Docker로 패키징 후 GCP VM에 배포
 예측 결과를 외부 클라이언트에 실시간 POST
 
+---
 
-### 📈 향후 개선 방향
+## 📈 향후 개선 방향
 지역별/센서별 또는 장소별 예측 정밀도 향상
 이상감지 시스템 정밀화
+
+---
+
+##📝 작성자
+이름: 정다혜
